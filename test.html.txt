@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+<title>
+
+"ecommerce"
+
+</title>
+
+<body>
+
+<h1>
+
+amazon
+
+<//h1>
+
+<iframe>
+
+width="500" height="384"src="emjfhwekfherugegrofgj.com"
+
+<title>
+watch this video
+</title>
+
+</iframe>
+
+<nav>
+
+<a href="home">
+</a>
+
+<a href="order">
+</a>
+
+<a href="offer">
+</a>
+
+<a href="help">
+</a>
+
+<a href="return">
+</a>
+
+</nav>
+
+</body>
+
+</head>
+
+</html>
