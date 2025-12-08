@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Responsive Product Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            padding: 30px 10px;
+        }
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fafafa;
+            padding: 30px 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 15px;
+            margin: 5px 0;
+        }
+        .card p {
+            font-size: 13px;
+            margin: 3px 0;
+        }
+        .card .price {
+            font-weight: bold;
+            margin-top: 6px;
+        }
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Responsive Product Grid</h1>
+
+        <div class="product-grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x150" alt="Product 1" />
+                <h3>Product 1</h3>
+                <p>High-quality item with great features.</p>
+                <p class="price">&#8377;499</p>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/200x150" alt="Product 2" />
+                <h3>Product 2</h3>
+                <p>Durable and stylish for daily use.</p>
+                <p class="price">&#8377;799</p>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/200x150" alt="Product 3" />
+                <h3>Product 3</h3>
+                <p>Lightweight and comfortable.</p>
+                <p class="price">&#8377;1,299</p>
+            </div>
+
+            <div class="card">
+                <img src="https://via.placeholder.com/200x150" alt="Product 4" />
+                <h3>Product 4</h3>
+                <p>Trendy design with premium quality.</p>
+                <p class="price">&#8377;999</p>
+            </div>
+        </div>
+    </div>
+    <footer style="text-align:center; margin-top:40px; color:#777;">Name : Sumit Rathore</footer>
+    <footer style="text-align:center; color:#777;">Admission Number : 2025b01010715</footer>
+     <footer style="text-align:center; color:#777;">Class : CSE-28</footer>
+</body>
+</html>
