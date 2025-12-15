@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #e3e6e6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #131921;
+      color: white;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 15px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    .logo-box span {
+      font-weight: bold;
+      color: #ff9900;
+      font-size: 20px;
+    }
+
+    .search-bar {
+      flex: 1;
+      display: flex;
+      max-width: 650px;
+    }
+
+    .search-bar select {
+      padding: 9px;
+      border: none;
+      background-color: #e6e6e6;
+      font-size: 12px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 9px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      width: 50px;
+      border: none;
+      background-color: #febd69;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+      align-items: center;
+    }
+
+    .nav-item-small {
+      font-size: 10px;
+    }
+
+    .nav-item-bold {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Page container */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Hero banner */
+    .hero-banner {
+      background: linear-gradient(to right, #f5f6f6, #e3e6e6);
+      height: 220px;
+      margin: 15px 15px 0;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner-text {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      max-width: 380px;
+    }
+
+    .hero-banner h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .hero-banner-img {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Product grid */
+    .products-section {
+      padding: 20px 15px 40px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .products-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    .product-image-wrapper {
+      background-color: #f7f7f7;
+      padding: 10px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .product-content {
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+      min-height: 36px;
+    }
+
+    .product-rating {
+      font-size: 12px;
+      color: #007185;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+      margin: 4px 0;
+    }
+
+    .product-price-symbol {
+      font-size: 12px;
+      vertical-align: top;
+    }
+
+    .product-price-main {
+      color: #b12704;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .product-price-decimal {
+      font-size: 12px;
+      color: #b12704;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .product-delivery {
+      font-size: 12px;
+      color: #565959;
+    }
+
+    .product-card button {
+      margin-top: 8px;
+      align-self: flex-start;
+      background-color: #ffd814;
+      border: 1px solid #f7ca00;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      border-radius: 20px;
+    }
+
+    .product-card button:hover {
+      background-color: #f7ca00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo-box">
+      <span>amazon</span>
+    </div>
+
+    <div class="search-bar">
+      <select>
+        <option>All</option>
+      </select>
+      <input type="text" placeholder="Search Amazon">
+      <button>🔍</button>
+    </div>
+
+    <div class="nav-right">
+      <div>
+        <div class="nav-item-small">Hello, Sign in</div>
+        <div class="nav-item-bold">Account & Lists</div>
+      </div>
+      <div>
+        <div class="nav-item-small">Returns</div>
+        <div class="nav-item-bold">& Orders</div>
+      </div>
+      <div class="nav-item-bold">Cart</div>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+      <img class="hero-banner-img"
+        src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Shopping banner">
+      <div class="hero-banner-text">
+        <h2>Great Indian Deals</h2>
+        <p>Top electronics, fashion & accessories at exciting prices. Shop now and upgrade your setup.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products-section">
+      <h3 class="section-title">Recommended for you</h3>
+
+      <div class="products-row">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.pexels.com/photos/3945650/pexels-photo-3945650.jpeg?auto=compress&cs=tinysrgb&w=400"
+                 alt="Headphones">
+          </div>
+          <div class="product-content">
+            <div class="product-title">
+              Wireless Over‑Ear Headphones with Deep Bass
+            </div>
+            <div class="product-rating">★★★★☆ (1,245)</div>
+            <div class="product-price-row">
+              <span class="product-price-symbol">₹</span>
+              <span class="product-price-main">1,299</span>
+              <span class="product-price-decimal">.00</span>
+            </div>
+            <div class="product-delivery">Free delivery by Tomorrow</div>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.pexels.com/photos/18154464/pexels-photo-18154464/free-photo-of-smartwatch-on-a-person-s-wrist.jpeg?auto=compress&cs=tinysrgb&w=400"
+                 alt="Smart Watch">
+          </div>
+          <div class="product-content">
+            <div class="product-title">
+              AMOLED Smart Watch with Heart Rate Monitor
+            </div>
+            <div class="product-rating">★★★★☆ (3,021)</div>
+            <div class="product-price-row">
+              <span class="product-price-symbol">₹</span>
+              <span class="product-price-main">1,999</span>
+              <span class="product-price-decimal">.00</span>
+            </div>
+            <div class="product-delivery">Free delivery by Friday</div>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.pexels.com/photos/4790282/pexels-photo-4790282.jpeg?auto=compress&cs=tinysrgb&w=400"
+                 alt="Running Shoes">
+          </div>
+          <div class="product-content">
+            <div class="product-title">
+              Lightweight Running Shoes for Men
+            </div>
+            <div class="product-rating">★★★☆☆ (842)</div>
+            <div class="product-price-row">
+              <span class="product-price-symbol">₹</span>
+              <span class="product-price-main">899</span>
+              <span class="product-price-decimal">.00</span>
+            </div>
+            <div class="product-delivery">Free delivery on orders over ₹499</div>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=400"
+                 alt="Backpack">
+          </div>
+          <div class="product-content">
+            <div class="product-title">
+              Anti‑Theft Laptop Backpack 15.6"
+            </div>
+            <div class="product-rating">★★★★★ (5,432)</div>
+            <div class="product-price-row">
+              <span class="product-price-symbol">₹</span>
+              <span class="product-price-main">1,499</span>
+              <span class="product-price-decimal">.00</span>
+            </div>
+            <div class="product-delivery">Free delivery by Sunday</div>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
