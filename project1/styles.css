@@ -1,0 +1,191 @@
+*{
+    margin:0;
+    padding:0;
+}
+/* top div of header */
+.toph{
+    display:flex;
+    justify-content: space-between;
+    background-color: rgb(217, 47, 47);
+    padding:2rem;
+}
+/* BookMyShow logo name */
+.brand{
+    color:white;
+}
+/* Buttons on top div of header */
+.menu button{
+    margin-left:0.5rem;
+    font-size: 1.2rem;
+    color:white;
+    border:none;
+    background-color: rgb(217, 47, 47);
+    padding-top:0.35rem;
+    cursor: pointer;
+}
+/* bottom div of header */
+.bottomh{
+    display:flex;
+    background-color:rgb(182, 180, 180);
+    justify-content:center;
+    padding:1.5rem 0rem;
+}
+.searching{
+    width:390px;
+    max-width:60%;
+    padding:0.4rem;
+    border-radius: 0.5rem;;
+
+}
+.bottomh button{
+    margin-left:0.5rem;
+    font-size:2rem;
+    background-color:rgb(217, 47, 47);
+    color:white;
+    padding:0.4rem;
+    border:5px;
+    border-radius: 10px;
+    
+}
+/* main */
+/* first div of main */
+.topm{
+    padding:1.9rem;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYe3naH2-VTl6XgqwKC4GIXfuTC49qFJLHmg&s);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.topm h2{
+    color:white;
+    font-size:2.2rem;
+    background-color:black;
+}
+.topm button{
+    background-color:rgb(217, 47, 47);
+    color:white;
+    font-size:2rem;
+    margin-top:1rem;
+    border-radius: 0.5rem;
+}
+.mm{
+    text-align:center;
+    padding:1rem;
+}
+.mm h2{
+    font-size:3.2rem;
+    font-weight: bold;
+}
+.bottomm{
+    display:flex;
+    justify-content: space-evenly;
+    overflow-x:scroll;
+   
+    
+}
+.img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8{
+    height:500px;
+    
+}
+.card{
+    border:0.5rem solid rgb(204, 198, 198);
+    text-align:center;
+    background-color:rgb(247, 247, 248);
+    border-radius: 0.5rem;
+    margin:1rem;
+}
+.card h3{
+    font-size:2rem;
+}
+.m{
+    padding-top:1.2rem;
+}
+/* top2m */
+.top2m{
+    display:flex;
+    
+    overflow-x:scroll;
+    padding:1rem;
+    background-color:rgb(247, 247, 248);
+}
+.ums{
+    text-align:center;
+    padding:1rem;
+    font-size:3.2rem;
+    font-weight:bold;
+}
+/* music section */
+.bottom5{
+    display:flex;
+    justify-content: space-evenly;
+    overflow-x:scroll;
+   
+}
+.card2{
+    border:0.5rem solid rgb(204, 198, 198);
+    text-align:center;
+    background-color:rgb(247, 247, 248);
+    border-radius: 0.5rem;
+    margin:1rem;
+}
+.imgg{
+    height:500px;
+}
+.card2 h3{
+    font-size:2rem;
+}
+.g{
+    padding-top:1.2rem;
+}
+.bottommg{
+    padding:4rem;
+    display:flex;
+    justify-content: center;
+}
+.bottom32{
+    margin-left:6rem;
+    font-size:2rem;
+}
+.bottom33{
+    display:flex;
+   
+    padding-left:5rem;
+    overflow-x:scroll;
+    justify-content: space-evenly;
+}
+.bottommg{
+        overflow-x:scroll;
+    }
+@media(max-width:600px){
+    .toph{
+        flex-direction: column;
+        align-items:center;
+    }
+    .menu {
+        display:flex;
+        flex-direction: column;
+        padding:1rem;
+    }
+    .bottomm{
+        flex-direction: column;
+
+    }
+    .top2m{
+        flex-direction: column;
+    }
+    .bottom5{
+        flex-direction: column;
+    }
+    .bottom33{
+        flex-direction: column;
+    }
+    .bottommg{
+        overflow-x:scroll;
+    }
+    .bottom32 {
+        font-size:1rem;
+        padding:1rem;
+    }
+
+}
